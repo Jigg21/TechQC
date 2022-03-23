@@ -1,0 +1,9 @@
+$array = Get-Partition -DiskNumber 0
+for( $i = 0; $i -lt $array.length; $i++)
+{
+ $sum = $sum + ($array[$i]).Size
+}
+$diskSize = Get-Disk -Number 0
+$diskSize = $diskSize.Size
+$extendSize = $diskSize - $sum
+echo "$extendSize"

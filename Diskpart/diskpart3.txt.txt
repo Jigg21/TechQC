@@ -1,0 +1,4 @@
+select Disk 0
+select Partition 3
+extend
+exit
