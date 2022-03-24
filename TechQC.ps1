@@ -1,6 +1,6 @@
 ﻿
 #Confirms Windows Activation or opens the activation window
-function confirm-activation
+function Confirm-Activation
 {
 $WinVerAct = (cscript /Nologo "C:\Windows\System32\slmgr.vbs" /xpr) -join ''
 
@@ -11,7 +11,7 @@ Start-Process "ms-settings:activation"
 }
 
 #Set the timezone to CST and trigger a time sync with windows timeservers
-function set-time
+function Set-Time
 {
   Set-TimeZone -Id "Central America Standard Time"
   net start w32time
@@ -50,5 +50,7 @@ if ((Test-Admin) -eq $false)  {
 }
 
 Start-Transcript
+Confirm-Activation
+Set-Time
 fuckyou
 Stop-Transcript
